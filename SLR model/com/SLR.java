@@ -10,11 +10,11 @@ public class SLR {
         x = iX;
         n = iDataSet.length;
 
-        for(int i = 0; i < iDataSet.length; i++) {
-            sumX += iDataSet[i][1];
-            sumY += iDataSet[i][0];
-            sumXSqr += iDataSet[i][1] * iDataSet[i][1];
-            sumXY += iDataSet[i][1] * iDataSet[i][0];
+        for (double[] doubles : iDataSet) {
+            sumX += doubles[1];
+            sumY += doubles[0];
+            sumXSqr += doubles[1] * doubles[1];
+            sumXY += doubles[1] * doubles[0];
         }
     }
 
@@ -25,7 +25,8 @@ public class SLR {
     }
     public double beta1(){
         return (n * sumXY - sumX * sumY) /
-                (n * sumXSqr - Math.pow(sumX, 2)); }
+                (n * sumXSqr - Math.pow(sumX, 2));
+    }
 
     public double predictY() {
         return beta0() + beta1() * x;
