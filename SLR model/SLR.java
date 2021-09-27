@@ -25,8 +25,8 @@ public class SLR {
     }
     public double beta1(){
         return (n * sumXY - sumX * sumY) /
-                (n * sumXSqr - Math.pow(sumX, 2)); }
-
+                (n * sumXSqr - Math.pow(sumX, 2));
+    }
     public double predictY() {
         return beta0() + beta1() * x;
     }
